@@ -22,7 +22,14 @@ module.exports = {
                     loader: 'html-loader',
                     options: {minimize: true}
                 }
-            }
+            },
+            {
+                test: /\.(js|jsx)$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: 'babel-loader'
+                }
+            },
         ]
     },
     resolve: {
