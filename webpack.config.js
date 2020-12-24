@@ -6,7 +6,7 @@ const DIST_DIR = __dirname + '/dist';
 
 module.exports = {
     entry: [
-        SRC_DIR + '/public/index.html',
+        SRC_DIR + '/index.jsx',
     ],
     output: {
         path: DIST_DIR,
