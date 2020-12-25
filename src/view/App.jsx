@@ -9,7 +9,14 @@ import { PropertyList } from "../components/PropertyList/PropertyList";
 import s from "../styles/index.scss";
 
 export const App = () => {
-   const { loading, products, propsList, valueDiffPropsList, productsToCompare, removeFromCompare, updateProductsToCompare } = useProducts();
+   const {
+      loading,
+      products,
+      propsList,
+      productsToCompare,
+      removeFromCompare,
+      updateProductsToCompare
+   } = useProducts();
 
    if (loading) return <div>...</div>;
 
@@ -19,14 +26,13 @@ export const App = () => {
             <div className={s.compareOptionsContainer}>
                <CompareList productsToCompare={productsToCompare} updateProductsToCompare={updateProductsToCompare} />
                <div className={s.propertyListContainer}>
-                  <PropertyList propsList={propsList} valueDiffPropsList={valueDiffPropsList} />
+                  <PropertyList propsList={propsList} />
                </div>
             </div>
             <div className={s.productListContainer}>
                <ProductList
                   products={products}
                   propsList={propsList}
-                  valueDiffPropsList={valueDiffPropsList}
                   productsToCompare={productsToCompare}
                   removeFromCompare={removeFromCompare}
                />

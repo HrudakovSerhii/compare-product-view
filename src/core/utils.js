@@ -31,14 +31,14 @@ export const filterPropsToCompare = (productsPropList, excludePropNames) =>
    productsPropList.filter((productProp) => !excludePropNames.find((p) => p === productProp));
 
 /*
-   Function return list of property names that exist at all products and where values related to prop.name differ
-   from other products values with the same prop. name
+   Function return list of property names that exist in all products and where values related to prop.name at all
+   products not equal
    @param {array} compareProducts list of products to compare
    @param {array} comparePropNames list of props names to compare
  * @return {array} list of property names where values on products has diff
  */
 export const getPropNamesWithValueDiff = (compareProducts, comparePropNames) => {
-   const newPropsWithDiff = [];
+   const propNamesWithValueDiff = [];
 
    comparePropNames.forEach((propName) => {
       let hasDiff = false;
@@ -50,8 +50,8 @@ export const getPropNamesWithValueDiff = (compareProducts, comparePropNames) => 
          return hasDiff;
       });
 
-      if (hasDiff) newPropsWithDiff.push(propName);
+      propNamesWithValueDiff.push({ propName, hasDiff });
    });
 
-   return newPropsWithDiff;
+   return propNamesWithValueDiff;
 };

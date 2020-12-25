@@ -6,7 +6,7 @@ import { PROP_AS_ID } from "../../core/hooks";
 
 import s from "./styles/ProductList.scss";
 
-export const ProductList = ({ products, propsList, valueDiffPropsList, productsToCompare, removeFromCompare }) => {
+export const ProductList = ({ products, propsList, productsToCompare, removeFromCompare }) => {
    return (
       <div className={s.productList}>
          {products.map((product) => {
@@ -18,7 +18,6 @@ export const ProductList = ({ products, propsList, valueDiffPropsList, productsT
                   isActive={isActive}
                   productItem={product}
                   propsList={propsList}
-                  valueDiffPropsList={valueDiffPropsList}
                   onItemRemove={removeFromCompare}
                />
             );

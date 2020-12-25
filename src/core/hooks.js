@@ -32,7 +32,6 @@ export const useProducts = () => {
    const [products, setProducts] = React.useState([]);
 
    const [propsList, setPropsList] = React.useState([]);
-   const [valueDiffPropsList, setValueDiffPropsList] = React.useState([]);
 
    const [productsToCompare, setProductsToCompare] = React.useState([]);
 
@@ -77,17 +76,15 @@ export const useProducts = () => {
    React.useEffect(() => {
       const commonPropNamesList = getCommonPropNameList(products);
 
-      const _propsList = filterPropsToCompare(commonPropNamesList, EXCLUDE_FROM_COMPARE_PROP_NAMES);
-      const _valueDiffPropsList = getPropNamesWithValueDiff(products, _propsList);
+      const comparePropsList = filterPropsToCompare(commonPropNamesList, EXCLUDE_FROM_COMPARE_PROP_NAMES);
+      const _valueDiffPropsList = getPropNamesWithValueDiff(products, comparePropsList);
 
-      setPropsList(_propsList);
-      setValueDiffPropsList(_valueDiffPropsList);
+      setPropsList(_valueDiffPropsList);
    }, [products.map((p) => p?.[PROP_AS_ID]).toString()]);
 
    return {
       products,
       propsList,
-      valueDiffPropsList,
       productsToCompare,
       errors,
       loading,
