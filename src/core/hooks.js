@@ -4,6 +4,25 @@ import { get } from "./apiController";
 
 import { PRODUCT_ALL_URL } from "../../app.config";
 
+const EXCLUDE_FROM_COMPARE_PROP_NAMES = [
+   "salePrice",
+   "manufacturerName",
+   "grossPrice",
+   "BUP_UOM",
+   "BUP_Value",
+   "uom",
+   "productImage",
+   "BUP_Conversion",
+   "minQuantity",
+   "manufacturerImage",
+   "name",
+   "sku",
+   "listPrice",
+   "channel",
+   "display",
+   "atp"
+];
+
 export const PROP_AS_ID = "Artikelnummer";
 
 export const useAllProducts = () => {
