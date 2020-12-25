@@ -13,6 +13,8 @@
 .compareOptionsContainer {
   display: flex;
   flex-direction: column;
+  align-self: baseline;
+  min-width: calc(20vw - (var(--spacer-1) * 4));
 
   .propertyListContainer {
     display: flex;
