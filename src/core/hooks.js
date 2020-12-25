@@ -29,6 +29,9 @@ export const useAllProducts = () => {
    const [loading, setLoading] = React.useState(false);
    const [products, setProducts] = React.useState([]);
 
+   const [propsList, setPropsList] = React.useState([]);
+   const [valueDiffPropsList, setValueDiffPropsList] = React.useState([]);
+
    const [productsToCompare, setProductsToCompare] = React.useState([]);
 
    const [errors, setErrors] = React.useState();
@@ -70,6 +73,8 @@ export const useAllProducts = () => {
 
    return {
       products,
+      propsList,
+      valueDiffPropsList,
       productsToCompare,
       errors,
       loading,
