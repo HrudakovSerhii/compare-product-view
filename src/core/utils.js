@@ -20,3 +20,12 @@ export const getCommonPropNameList = (products) => {
 
    return commonProps;
 };
+
+/*
+   Function return list of property names that required for comparing
+   @param {array} productsPropList list of available props to compare
+   @param {array} excludePropNames list of props to exclude from compare
+ * @return {array} list of property names for comparing
+ */
+export const filterPropsToCompare = (productsPropList, excludePropNames) =>
+   productsPropList.filter((productProp) => !excludePropNames.find((p) => p === productProp));
