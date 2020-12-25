@@ -59,6 +59,11 @@ export const useAllProducts = () => {
       setLoading(false);
    };
 
+   const removeFromCompare = (id) => {
+      setProducts((prevState) => prevState.filter((p) => p[PROP_AS_ID] !== id));
+      setProductsToCompare((prevState) => prevState.filter((p) => p.id !== id));
+   };
+
    const updateProductsToCompare = (id, newState) => {
       setProductsToCompare((prevState) =>
          prevState.map((activeItem) => (activeItem.id === id ? { ...activeItem, active: newState } : activeItem))
@@ -87,6 +92,7 @@ export const useAllProducts = () => {
       errors,
       loading,
       refetch: fetchAllProducts,
+      removeFromCompare,
       updateProductsToCompare
    };
 };
