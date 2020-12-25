@@ -1,0 +1,14 @@
+@import "src/styles/index";
+
+.compareList {
+  display: flex;
+  flex-direction: column;
+
+  .listContainer {
+    .itemContainer {
+      &.active {
+        font-weight: bold;
+      }
+    }
+  }
+}
