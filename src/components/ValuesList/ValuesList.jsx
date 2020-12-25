@@ -8,21 +8,19 @@ import s from "./styles/ValuesList.scss";
 export const ValuesList = ({ productItem, propsList }) => {
    return (
       <div className={s.valuesList}>
-         <div className={s.listContainer}>
-            {propsList.map(({ propName, hasDiff }, i) => {
-               if (propName === "badges") {
-                  return <Badges data={productItem[propName]} />;
-               } else {
-                  return (
-                     <Title
-                        key={propName + i}
-                        title={productItem[propName]}
-                        style={`${s.propertyItem} ${hasDiff ? s.hasDiff : ""}`}
-                     />
-                  );
-               }
-            })}
-         </div>
+         {propsList.map(({ propName, hasDiff }, i) => {
+            if (propName === "badges") {
+               return <Badges key={propName + i} data={productItem[propName]} />;
+            } else {
+               return (
+                  <Title
+                     key={propName + i}
+                     title={productItem[propName]}
+                     style={`${s.propertyItem} ${hasDiff ? s.hasDiff : ""}`}
+                  />
+               );
+            }
+         })}
       </div>
    );
 };
