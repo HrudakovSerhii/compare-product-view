@@ -6,7 +6,7 @@ import { ProductList } from "../components/ProductList/ProductList";
 import { CompareList } from "../components/CompareList/CompareList";
 import { PropertyList } from "../components/PropertyList/PropertyList";
 
-import s from "../styles/index.scss";
+import s from "../styles/app.scss";
 
 export const App = () => {
    const {

@@ -2,31 +2,6 @@
 @import "variables";
 @import "fonts";
 
-.appContainer {
-  display: flex;
-}
-
-.centerContainer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.compareOptionsContainer {
-  display: flex;
-  flex-direction: column;
-
-  .propertyListContainer {
-    display: flex;
-    flex: 1;
-  }
-}
-
-.productListContainer {
-  display: flex;
-  width: 100%;
-}
-
 body {
   font-family: $base-font-family;
   font-size: $base-font-size;
