@@ -48,4 +48,13 @@
   &.hasDiff {
     background-color: $gray-light;
   }
+
+  &.badges {
+    display: flex;
+    align-items: center;
+    height: $icon-size;
+    padding: calc(var(--spacer-2) / 1.3) 0;
+    padding-left: var(--baseline-1);
+    border-top: 1px solid $gray-light;
+  }
 }
