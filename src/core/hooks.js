@@ -27,7 +27,7 @@ const EXCLUDE_FROM_COMPARE_PROP_NAMES = [
 
 export const PROP_AS_ID = "Artikelnummer";
 
-export const useAllProducts = () => {
+export const useProducts = () => {
    const [loading, setLoading] = React.useState(false);
    const [products, setProducts] = React.useState([]);
 
