@@ -2,7 +2,7 @@
 
 .productItem {
   display: flex;
-  flex: 1;
+  flex-direction: column;
 
   &.disabled {
     background-color: #c4c4c4;
