@@ -1,6 +1,7 @@
 import React from "react";
 
 import { Title } from "../Title/Title";
+import { Badges } from "../Badges/Badges";
 
 import s from "./styles/ValuesList.scss";
 
@@ -10,7 +11,7 @@ export const ValuesList = ({ productItem, propsList }) => {
          <div className={s.listContainer}>
             {propsList.map(({ propName, hasDiff }, i) => {
                if (propName === "badges") {
-                  return <span>Badges</span>;
+                  return <Badges data={productItem[propName]} />;
                } else {
                   return (
                      <Title
