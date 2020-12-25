@@ -4,6 +4,8 @@ import { get } from "./apiController";
 
 import { PRODUCT_ALL_URL } from "../../app.config";
 
+import { getCommonPropNameList, filterPropsToCompare, getPropNamesWithValueDiff } from "./utils";
+
 const EXCLUDE_FROM_COMPARE_PROP_NAMES = [
    "salePrice",
    "manufacturerName",
@@ -68,8 +70,14 @@ export const useAllProducts = () => {
    }, []);
 
    React.useEffect(() => {
-      console.log(products);
-   }, [products]);
+      const commonPropNamesList = getCommonPropNameList(products);
+
+      const _propsList = filterPropsToCompare(commonPropNamesList, EXCLUDE_FROM_COMPARE_PROP_NAMES);
+      const _valueDiffPropsList = getPropNamesWithValueDiff(products, _propsList);
+
+      setPropsList(_propsList);
+      setValueDiffPropsList(_valueDiffPropsList);
+   }, [products.map((p) => p?.[PROP_AS_ID]).toString()]);
 
    return {
       products,
