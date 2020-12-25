@@ -3,30 +3,47 @@
 .productItem {
   display: flex;
   flex-direction: column;
+  width: $product-item-width;
+  padding-left: var(--baseline-1);
 
   &.disabled {
     background-color: #c4c4c4;
   }
 
   .header {
+    padding-bottom: var(--baseline-2);
+    border-bottom: $gray-light solid 1px;
+
+    .removeItemContainer {
+      text-align: right;
+      margin: var(--baseline-2);
+    }
 
     .imageContainer {
-
-      .removeItemContainer {
-
-      }
+      display: flex;
+      justify-content: center;
+      position: relative;
     }
 
     .titleContainer {
+      padding: var(--baseline-2) var(--spacer-1);
 
+      .productItemTitle {
+        color: $blue-light;
+        font-weight: $bold-font-weight;
+      }
     }
 
     .priceContainer {
+      padding: 0 var(--spacer-1);
+      .productItemPrice {
+        font-weight: $bold-font-weight;
+      }
 
+      span {
+        color: $gray;
+        font-size: $small-font-size;
+      }
     }
-  }
-
-  .propListContainer {
-
   }
 }

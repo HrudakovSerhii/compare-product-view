@@ -6,7 +6,7 @@ $gray-light: #f4f4f4;
 $gray: #c4c4c4;
 $white: #fff;
 $blue-dark: #0447c0;
-$blue-light: #6695F0;
+$blue-light: #0144c5;
 
 $base-font-color: $black;
 
@@ -31,10 +31,11 @@ $medium-screen: 992px;
 $small-screen: 540px;
 
 // container
-$container-width: 1140px;
+$product-item-width: 20vw;
+$product-image-width: 200px;
 
 // Icons
-$icon-size: 30px;
+$icon-size: 40px;
 
 :root {
   // spacing

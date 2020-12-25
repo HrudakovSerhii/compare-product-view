@@ -5,18 +5,47 @@
 }
 
 .image {
-  widht: 100%
+  display: block;
+  position: relative;
+  overflow: hidden;
+  width: $product-image-width;
+  height: 100%;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+  }
+
+  .spacer {
+    padding-top: 100%;
+  }
 }
 
 .badgeList {
   display: flex;
-  flex-direction: row;
-  padding-right: 5px;
-  margin: 5px 0;
+  justify-content: center;
+  padding: var(--spacer-1) 0;
+  border-bottom: 1px solid $gray-light;
 
   .badge {
-    padding-left: 5px;
-    width: 40px;
-    height: 40px;
+    width: $icon-size;
+    height: $icon-size;
+    margin: calc(var(--baseline-1) / 2)
+  }
+}
+
+.propertyItem {
+  padding: var(--spacer-1);
+  font-weight: $bold-font-weight;
+  border-bottom: 1px solid $gray-light;
+
+  &.hasDiff {
+    background-color: $gray-light;
   }
 }

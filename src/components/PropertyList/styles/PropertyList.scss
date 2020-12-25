@@ -1,16 +1,10 @@
 @import "src/styles/variables";
+@import "src/styles/common";
 
 .propertyList {
   display: flex;
 
   .listContainer {
-    display: flex;
-    flex-direction: column;
-
-    .propertyItem {
-      &.hasDiff {
-        background-color: #7d7d7d;
-      }
-    }
+    width: 100%;
   }
 }
