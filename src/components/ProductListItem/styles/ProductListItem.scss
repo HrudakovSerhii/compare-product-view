@@ -1,0 +1,32 @@
+@import "src/styles/index";
+
+.productItem {
+  display: flex;
+  flex: 1;
+
+  &.disabled {
+    background-color: #c4c4c4;
+  }
+
+  .header {
+
+    .imageContainer {
+
+      .removeItemContainer {
+
+      }
+    }
+
+    .titleContainer {
+
+    }
+
+    .priceContainer {
+
+    }
+  }
+
+  .propListContainer {
+
+  }
+}
