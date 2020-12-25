@@ -1,11 +1,13 @@
 import React from "react";
 
+import { Title } from "../Title/Title";
+
 import s from "./styles/CompareList.scss";
 
 export const CompareList = ({ updateProductsToCompare, productsToCompare = [] }) => {
    return (
       <div className={s.compareList}>
-         <label>Je Selectie</label>
+         <Title title="Je Selectie" style={s.title} />
          <div className={s.listContainer}>
             {productsToCompare.map(({ id, name, active }, i) => (
                <div
@@ -14,7 +16,7 @@ export const CompareList = ({ updateProductsToCompare, productsToCompare = [] })
                   onClick={() => updateProductsToCompare(id, !active)}
                >
                   <input readOnly checked={active} type="checkbox" />
-                  <label>{name}</label>
+                  <Title title={name} />
                </div>
             ))}
          </div>
