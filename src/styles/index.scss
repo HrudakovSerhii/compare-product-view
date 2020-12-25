@@ -4,3 +4,24 @@
 .appContainer {
   display: flex;
 }
+
+.centerContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.compareOptionsContainer {
+  display: flex;
+  flex-direction: column;
+
+  .propertyListContainer {
+    display: flex;
+    flex: 1;
+  }
+}
+
+.productListContainer {
+  display: flex;
+  width: 100%;
+}

@@ -2,16 +2,36 @@ import React from "react";
 
 import { useProducts } from "../core/hooks";
 
+import { ProductList } from "../components/ProductList/ProductList";
+import { CompareList } from "../components/CompareList/CompareList";
+import { PropertyList } from "../components/PropertyList/PropertyList";
+
 import s from "../styles/index.scss";
 
 export const App = () => {
-   const { loading } = useProducts();
+   const { loading, products, propsList, valueDiffPropsList, productsToCompare, removeFromCompare, updateProductsToCompare } = useProducts();
 
    if (loading) return <div>...</div>;
 
    return (
       <div className={s.appContainer}>
-
+         <div className={s.centerContainer}>
+            <div className={s.compareOptionsContainer}>
+               <CompareList productsToCompare={productsToCompare} updateProductsToCompare={updateProductsToCompare} />
+               <div className={s.propertyListContainer}>
+                  <PropertyList propsList={propsList} valueDiffPropsList={valueDiffPropsList} />
+               </div>
+            </div>
+            <div className={s.productListContainer}>
+               <ProductList
+                  products={products}
+                  propsList={propsList}
+                  valueDiffPropsList={valueDiffPropsList}
+                  productsToCompare={productsToCompare}
+                  removeFromCompare={removeFromCompare}
+               />
+            </div>
+         </div>
       </div>
    );
 };
