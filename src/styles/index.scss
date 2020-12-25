@@ -1,5 +1,6 @@
 @import "reset";
 @import "variables";
+@import "fonts";
 
 .appContainer {
   display: flex;
@@ -24,4 +25,12 @@
 .productListContainer {
   display: flex;
   width: 100%;
+}
+
+body {
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+  color: $base-font-color;
+  background-color: white;
 }
