@@ -1,8 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+import { App } from './view/App';
+
 ReactDOM.render(
-    <p>Hello world!!</p>,
+    <App />,
     document.getElementById('root')
 );
 
