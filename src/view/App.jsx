@@ -23,9 +23,12 @@ export const App = () => {
    return (
       <div className={s.appContainer}>
          <div className={s.centerContainer}>
-            <div className={s.compareOptionsContainer}>
-               <CompareList productsToCompare={productsToCompare} updateProductsToCompare={updateProductsToCompare} />
-               <div className={s.propertyListContainer}>
+            <div className={s.mainContainer}>
+               <div className={s.compareOptionsContainer}>
+                  <CompareList
+                     productsToCompare={productsToCompare}
+                     updateProductsToCompare={updateProductsToCompare}
+                  />
                   <PropertyList propsList={propsList} />
                </div>
                <ProductList
