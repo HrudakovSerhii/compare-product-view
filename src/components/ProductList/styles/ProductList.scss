@@ -3,4 +3,6 @@
 .productList {
   display: flex;
   flex-direction: row;
+  border-left: 1px $gray solid;
+  overflow-x: scroll;
 }
