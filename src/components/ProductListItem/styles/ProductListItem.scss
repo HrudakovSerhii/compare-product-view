@@ -13,12 +13,11 @@
   }
 
   .header {
-    margin: var(--spacer-2) 0 var(--spacer-4) var(--spacer-2);
     border-bottom: $gray-light solid 1px;
 
     .removeItemContainer {
       text-align: right;
-      margin: var(--spacer-2);
+      padding: var(--spacer-2);
     }
 
     .imageContainer {
@@ -31,10 +30,11 @@
     .productItemTitle {
       color: $blue-light;
       font-weight: $bold-font-weight;
-      padding-bottom: var(--spacer-2);
+      padding: var(--spacer-2);
     }
 
     .priceContainer {
+      padding-left: var(--spacer-2);
       padding-bottom: var(--spacer-2);
 
       .productItemPrice {
