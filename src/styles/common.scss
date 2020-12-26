@@ -43,14 +43,14 @@
   font-weight: $bold-font-weight;
   border-bottom: 1px solid $gray-light;
 
-  &.hasDiff {
-    background-color: $gray-light;
-  }
-
   &.badges {
     display: flex;
     align-items: center;
     height: $icon-size;
     padding: var(--spacer-1) 0 var(--spacer-1) var(--spacer-2);
   }
+}
+
+.hasDiff {
+  background-color: $gray-light;
 }
