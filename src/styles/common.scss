@@ -27,19 +27,6 @@
   }
 }
 
-.badgeList {
-  display: flex;
-  justify-content: center;
-  padding: var(--spacer-1) 0;
-  border-bottom: 1px solid $gray-light;
-
-  .badge {
-    width: $icon-size;
-    height: $icon-size;
-    margin: calc(var(--baseline-1) / 2)
-  }
-}
-
 .propertyItem {
   padding: var(--spacer-1);
   font-weight: $bold-font-weight;
