@@ -10,7 +10,7 @@ export const ValuesList = ({ productItem, propsList }) => {
       <div className={s.valuesList}>
          {propsList.map(({ propName, hasDiff }, i) => {
             if (propName === "badges") {
-               return <Badges key={propName + i} data={productItem[propName]} />;
+               return <Badges hasDiff={hasDiff} key={propName + i} data={productItem[propName]} />;
             } else {
                return (
                   <Title
