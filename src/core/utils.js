@@ -15,7 +15,7 @@ export const getCommonPropNameList = (products) => {
    );
 
    Object.keys(props).forEach((p) => {
-      if ((products.length = props[p])) commonProps.push(p);
+      if (products.length === props[p]) commonProps.push(p);
    });
 
    return commonProps;
