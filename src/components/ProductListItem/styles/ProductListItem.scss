@@ -25,13 +25,10 @@
       position: relative;
     }
 
-    .titleContainer {
-      padding: var(--baseline-2) var(--spacer-1);
-
-      .productItemTitle {
-        color: $blue-light;
-        font-weight: $bold-font-weight;
-      }
+    .productItemTitle {
+      color: $blue-light;
+      font-weight: $bold-font-weight;
+      padding-bottom: var(--spacer-2);
     }
 
     .priceContainer {

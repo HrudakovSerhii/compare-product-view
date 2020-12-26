@@ -17,9 +17,7 @@ export const ProductListItem = ({ productItem, propsList, isActive, onItemRemove
          <div className={s.imageContainer}>
             <Image path={productItem["productImage"]} />
          </div>
-         <div className={s.titleContainer}>
-            <Title title={productItem["name"]} style={s.productItemTitle} />
-         </div>
+         <Title title={productItem["name"]} style={s.productItemTitle} />
          <div className={s.priceContainer}>
             <Title title={productItem["grossPrice"]} style={s.productItemPrice} />
             <span>per stuck/ excl. btw</span>
