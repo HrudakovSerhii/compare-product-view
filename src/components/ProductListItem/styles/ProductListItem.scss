@@ -1,28 +1,31 @@
 @import "src/styles/variables";
 
 .productItem {
+  grid-column: 2;
   display: flex;
   flex-direction: column;
+  justify-content: flex-end;
   width: $product-item-width;
-  padding-left: var(--baseline-1);
+  min-width: 200px;
 
   &.disabled {
-    background-color: #c4c4c4;
+    background-color: $gray-light;
   }
 
   .header {
-    padding-bottom: var(--baseline-2);
+    margin: var(--spacer-2) 0 var(--spacer-4) var(--spacer-2);
     border-bottom: $gray-light solid 1px;
 
     .removeItemContainer {
       text-align: right;
-      margin: var(--baseline-2);
+      margin: var(--spacer-2);
     }
 
     .imageContainer {
       display: flex;
       justify-content: center;
       position: relative;
+      padding-bottom: var(--spacer-4);
     }
 
     .productItemTitle {
@@ -32,7 +35,8 @@
     }
 
     .priceContainer {
-      padding: 0 var(--spacer-1);
+      padding-bottom: var(--spacer-2);
+
       .productItemPrice {
         font-weight: $bold-font-weight;
       }
