@@ -4,6 +4,17 @@
   font-size: $h4-font-size;
 }
 
+.headerTitle {
+  display: flex;
+  align-items: center;
+  grid-row: 1;
+  grid-column: 1;
+  font-size: $h2-font-size;
+  font-weight: $bold-font-weight;
+  color: $blue-light;
+  padding: var(--spacer-4) var(--spacer-2);
+}
+
 .image {
   display: block;
   position: relative;

@@ -2,6 +2,7 @@ import React from "react";
 
 import { useProducts } from "../core/hooks";
 
+import { Title } from "../components/Title/Title";
 import { ProductList } from "../components/ProductList/ProductList";
 import { CompareList } from "../components/CompareList/CompareList";
 import { PropertyList } from "../components/PropertyList/PropertyList";
@@ -23,6 +24,7 @@ export const App = () => {
    return (
       <div className={s.appContainer}>
          <div className={s.centerContainer}>
+            <Title title={`${products?.length} Producten Vergelijken`} style={s.headerTitle} />
             <div className={s.mainContainer}>
                <div className={s.compareOptionsContainer}>
                   <CompareList
