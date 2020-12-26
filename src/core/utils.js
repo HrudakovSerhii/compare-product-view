@@ -55,3 +55,9 @@ export const getPropNamesWithValueDiff = (compareProducts, comparePropNames) => 
 
    return propNamesWithValueDiff;
 };
+
+export const sortPropsListByAlphabet = (propsList) =>
+   [...propsList].sort((a, b) => {
+      if (a["propName"] === "badges") return -1;
+      else return a["propName"].localeCompare(b["propName"]);
+   });

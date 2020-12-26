@@ -4,7 +4,12 @@ import { get } from "./apiController";
 
 import { PRODUCT_ALL_URL } from "../../app.config";
 
-import { getCommonPropNameList, filterPropsToCompare, getPropNamesWithValueDiff } from "./utils";
+import {
+   getCommonPropNameList,
+   filterPropsToCompare,
+   getPropNamesWithValueDiff,
+   sortPropsListByAlphabet
+} from "./utils";
 
 const EXCLUDE_FROM_COMPARE_PROP_NAMES = [
    "salePrice",
@@ -77,9 +82,11 @@ export const useProducts = () => {
       const commonPropNamesList = getCommonPropNameList(products);
 
       const comparePropsList = filterPropsToCompare(commonPropNamesList, EXCLUDE_FROM_COMPARE_PROP_NAMES);
-      const _valueDiffPropsList = getPropNamesWithValueDiff(products, comparePropsList);
+      const valueDiffPropsList = getPropNamesWithValueDiff(products, comparePropsList);
 
-      setPropsList(_valueDiffPropsList);
+      const sortedPropsList = sortPropsListByAlphabet(valueDiffPropsList);
+
+      setPropsList(sortedPropsList);
    }, [products.map((p) => p?.[PROP_AS_ID]).toString()]);
 
    return {
