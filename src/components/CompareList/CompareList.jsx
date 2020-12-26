@@ -8,7 +8,7 @@ export const CompareList = ({ updateProductsToCompare, productsToCompare = [] })
    return (
       <div className={s.compareList}>
          <Title title="Je Selectie" style={s.title} />
-         <div className={s.listContainer}>
+         <>
             {productsToCompare.map(({ id, name, active }, i) => (
                <div
                   key={name + i}
@@ -19,7 +19,7 @@ export const CompareList = ({ updateProductsToCompare, productsToCompare = [] })
                   <Title title={name} />
                </div>
             ))}
-         </div>
+         </>
       </div>
    );
 };

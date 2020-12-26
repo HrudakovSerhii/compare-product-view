@@ -4,27 +4,25 @@
   display: flex;
   flex-direction: column;
   min-width: calc(20vw - (var(--spacer-1) * 4));
-  height: 390px;// magic number. Change layout to css-grid
+  padding-bottom: var(--spacer-4);
 
   .title {
     color: $blue-light;
     font-weight: $bold-font-weight;
-    padding: var(--baseline-2) var(--baseline-1);
+    padding: var(--baseline-2);
   }
 
-  .listContainer {
-    .itemContainer {
-      display: flex;
-      flex-direction: row;
-      padding: var(--baseline-1) 0;
+  .itemContainer {
+    display: flex;
+    flex-direction: row;
+    padding: var(--baseline-1) var(--spacer-2);
 
-      &.active {
-        font-weight: bold;
-      }
+    &.active {
+      font-weight: bold;
+    }
 
-      .title {
-        padding-left: var(--baseline-1);
-      }
+    .title {
+      padding-left: var(--baseline-1);
     }
   }
 }
