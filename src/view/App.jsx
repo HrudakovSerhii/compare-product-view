@@ -28,8 +28,6 @@ export const App = () => {
                <div className={s.propertyListContainer}>
                   <PropertyList propsList={propsList} />
                </div>
-            </div>
-            <div className={s.productListContainer}>
                <ProductList
                   products={products}
                   propsList={propsList}
