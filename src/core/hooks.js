@@ -69,9 +69,7 @@ export const useProducts = () => {
    };
 
    const updateProductsToCompare = (id, isActive) => {
-      setProductsToCompare((prevState) =>
-         prevState.map((activeItem) => (activeItem.id === id ? { ...activeItem, isActive } : activeItem))
-      );
+      setProductsToCompare((prevState) => [...prevState, ...{ id, isActive }]);
    };
 
    React.useEffect(() => {
