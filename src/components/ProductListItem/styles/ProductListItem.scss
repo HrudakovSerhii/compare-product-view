@@ -28,6 +28,13 @@
         height: $icon-size / 2;
         cursor: pointer;
       }
+
+      &.disableRemove {
+        .removeIcon {
+          cursor: default;
+          opacity: 0.6;
+        }
+      }
     }
 
     .imageContainer {

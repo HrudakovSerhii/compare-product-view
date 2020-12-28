@@ -10,36 +10,27 @@ import { PropertyList } from "../components/PropertyList/PropertyList";
 import s from "../styles/app.scss";
 
 export const App = () => {
-   const {
-      loading,
-      products,
-      propsList,
-      productsToCompare,
-      removeFromCompare,
-      updateProductsToCompare
-   } = useProducts();
-
-   if (loading) return <div>...</div>;
+   const { loading, visibleProducts, propsList, compareList, removeProduct, updateCompareList } = useProducts();
 
    return (
       <div className={s.appContainer}>
          <div className={s.centerContainer}>
-            <Title title={`${products?.length} Producten Vergelijken`} style={s.headerTitle} />
-            <div className={s.mainContainer}>
-               <div className={s.compareOptionsContainer}>
-                  <CompareList
-                     productsToCompare={productsToCompare}
-                     updateProductsToCompare={updateProductsToCompare}
-                  />
-                  <PropertyList propsList={propsList} />
+            {loading ? (
+               <div className={s.overlapContainer}>
+                  <span className={s.loading}>Loading</span>
                </div>
-               <ProductList
-                  products={products}
-                  propsList={propsList}
-                  productsToCompare={productsToCompare}
-                  removeFromCompare={removeFromCompare}
-               />
-            </div>
+            ) : (
+               <>
+                  <Title title={`${compareList?.length} Producten Vergelijken`} style={s.headerTitle} />
+                  <div className={s.mainContainer}>
+                     <div className={s.compareOptionsContainer}>
+                        <CompareList compareList={compareList} updateCompareList={updateCompareList} />
+                        <PropertyList propsList={propsList} />
+                     </div>
+                     <ProductList products={visibleProducts} propsList={propsList} removeProduct={removeProduct} />
+                  </div>
+               </>
+            )}
          </div>
       </div>
    );

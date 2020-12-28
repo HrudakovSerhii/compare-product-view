@@ -42,26 +42,26 @@
   .spacer {
     padding-top: 100%;
   }
+}
 
-  .overlapContainer {
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: $white;
-    font-size: 200%;
+.overlapContainer {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: $white;
+  font-size: 200%;
 
-    .loading {
-      animation: loaderAnimation 2s infinite;
-    }
+  .loading {
+    animation: loaderAnimation 2s infinite;
+  }
 
-    .noImage {
-      color: $gray;
-    }
+  .noImage {
+    color: $gray;
   }
 }
 

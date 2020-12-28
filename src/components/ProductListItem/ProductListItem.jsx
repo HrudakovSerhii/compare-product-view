@@ -6,11 +6,14 @@ import { ValuesList } from "../ValuesList/ValuesList";
 
 import s from "./styles/ProductListItem.scss";
 
-export const ProductListItem = ({ productItem, propsList, onItemRemove }) => (
+export const ProductListItem = ({ productItem, propsList, onItemRemove, disableRemove }) => (
    <div className={s.productItem}>
       <div className={s.header}>
-         <div className={s.removeItemContainer}>
-            <div className={s.removeIcon} onClick={() => onItemRemove(productItem["Artikelnummer"])} />
+         <div className={`${s.removeItemContainer} ${disableRemove ? s.disableRemove : ""}`}>
+            <div
+               className={s.removeIcon}
+               onClick={() => !disableRemove && onItemRemove(productItem["Artikelnummer"])}
+            />
          </div>
          <div className={s.imageContainer}>
             <Image path={productItem["productImage"]} />
