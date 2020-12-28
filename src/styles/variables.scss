@@ -1,11 +1,9 @@
 
 // colors
 $black: #202023;
-$gray-dark: #7d7d7d;
 $gray-light: #f4f4f4;
 $gray: #c4c4c4;
 $white: #fff;
-$blue-dark: #0447c0;
 $blue-light: #0144c5;
 
 $base-font-color: $black;
@@ -16,22 +14,13 @@ $base-font-size: 14px;
 $small-font-size: 0.875rem;
 $base-line-height: 1.25rem;
 
-$h1-font-size: $base-font-size * 3;
 $h2-font-size: $base-font-size * 2;
-$h3-font-size: $base-font-size * 1.5;
 $h4-font-size: $base-font-size * 1.2;
 
 $normal-font-weight: 500;
 $bold-font-weight: 700;
-$extra-bold-font-weight: 800;
-
-// breakpoints
-$large-screen: 1500px;
-$medium-screen: 992px;
-$small-screen: 540px;
 
 // container
-$product-item-width: 250px;
 $product-item-min-width: 250px;
 $product-image-width: 200px;
 $min-compare-options-width: 270px;
@@ -45,21 +34,6 @@ $icon-size: 30px;
   --base-font-size: 14px;
   --spacer-1: calc(var(--base-font-size) / 2);
   --spacer-2: calc(var(--base-font-size));
-  --spacer-3: calc(var(--base-font-size) / 2 * 3);
   --spacer-4: calc(var(--base-font-size) * 2);
-  --spacer-5: calc(var(--base-font-size) / 2 * 5);
-  --spacer-6: calc(var(--base-font-size) * 3);
-
-  // margins
-  --baseline-1: calc(var(--base-font-size) / 2);
-  --baseline-2: calc(var(--base-font-size));
-  --baseline-3: calc(var(--base-font-size) / 2 * 3);
-  --baseline-4: calc(var(--base-font-size) * 2);
-  --baseline-5: calc(var(--base-font-size) / 2 * 5);
-  --baseline-6: calc(var(--base-font-size) * 3);
-  --baseline-7: calc(var(--base-font-size) / 2 * 7);
-  --baseline-8: calc(var(--base-font-size) * 4);
-  --baseline-9: calc(var(--base-font-size) / 2 * 8);
-  --baseline-10: calc(var(--base-font-size) * 5);
 }
 

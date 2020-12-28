@@ -13,7 +13,6 @@ export const ProductListItem = ({ productItem, propsList, isActive, onItemRemove
       <div className={s.header}>
          <div className={s.removeItemContainer}>
             <div className={s.removeIcon} onClick={() => onItemRemove(productItem[PROP_AS_ID])} />
-            {/*<input type="checkbox" onChange={() => onItemRemove(productItem[PROP_AS_ID])} title={"Remove"} />*/}
          </div>
          <div className={s.imageContainer}>
             <Image path={productItem["productImage"]} />
