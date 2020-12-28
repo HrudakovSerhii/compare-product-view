@@ -13,7 +13,7 @@ module.exports = (env, argv) => {
       output: {
          path: DIST_DIR,
          publicPath: "/",
-         filename: "bundle.js"
+         filename: devMode ? "bundle.js" : "[bundle].[contenthash].js"
       },
       module: {
          rules: [
