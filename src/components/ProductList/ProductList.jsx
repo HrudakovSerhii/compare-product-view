@@ -12,15 +12,14 @@ export const ProductList = ({ products, propsList, productsToCompare, removeFrom
          {products.map((product) => {
             const isActive = !!productsToCompare.find((p) => p.id === product[PROP_AS_ID] && p.isActive);
 
-            return (
+            return isActive ? (
                <ProductListItem
                   key={product[PROP_AS_ID]}
-                  isActive={isActive}
                   productItem={product}
                   propsList={propsList}
                   onItemRemove={removeFromCompare}
                />
-            );
+            ) : null;
          })}
       </div>
    );

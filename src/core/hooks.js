@@ -88,7 +88,7 @@ export const useProducts = () => {
       sortedPropsList.sort((a) => (a["propName"] === "badges" ? -1 : 0));
 
       setPropsList(sortedPropsList);
-   }, [products.map((p) => p?.[PROP_AS_ID]).toString()]);
+   }, [productsToCompare.map((p) => p.isActive).toString()]);
 
    return {
       products,

@@ -8,8 +8,8 @@ import { ValuesList } from "../ValuesList/ValuesList";
 
 import s from "./styles/ProductListItem.scss";
 
-export const ProductListItem = ({ productItem, propsList, isActive, onItemRemove }) => (
-   <div className={`${s.productItem} ${!isActive ? s.disabled : ""}`}>
+export const ProductListItem = ({ productItem, propsList, onItemRemove }) => (
+   <div className={s.productItem}>
       <div className={s.header}>
          <div className={s.removeItemContainer}>
             <div className={s.removeIcon} onClick={() => onItemRemove(productItem[PROP_AS_ID])} />
