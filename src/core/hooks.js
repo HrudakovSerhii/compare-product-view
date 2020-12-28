@@ -30,8 +30,6 @@ const EXCLUDE_FROM_COMPARE_PROP_NAMES = [
    "atp"
 ];
 
-export const PROP_AS_ID = "Artikelnummer";
-
 export const useProducts = () => {
    const [loading, setLoading] = React.useState(false);
    const [products, setProducts] = React.useState([]);
@@ -53,7 +51,7 @@ export const useProducts = () => {
          setProducts(data?.products);
 
          const _productsToCompare = data?.products.reduce(
-            (acc, current) => [...acc, { id: current[PROP_AS_ID], name: current["name"], isActive: true }],
+            (acc, current) => [...acc, { id: current["Artikelnummer"], name: current["name"], isActive: true }],
             []
          );
 
@@ -64,7 +62,7 @@ export const useProducts = () => {
    };
 
    const removeFromCompare = (id) => {
-      setProducts((prevState) => prevState.filter((p) => p[PROP_AS_ID] !== id));
+      setProducts((prevState) => prevState.filter((p) => p["Artikelnummer"] !== id));
       setProductsToCompare((prevState) => prevState.filter((p) => p.id !== id));
    };
 

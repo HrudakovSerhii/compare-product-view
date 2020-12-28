@@ -1,7 +1,5 @@
 import React from "react";
 
-import { PROP_AS_ID } from "../../core/hooks";
-
 import { Image } from "../Image/Image";
 import { Title } from "../Title/Title";
 import { ValuesList } from "../ValuesList/ValuesList";
@@ -12,7 +10,7 @@ export const ProductListItem = ({ productItem, propsList, onItemRemove }) => (
    <div className={s.productItem}>
       <div className={s.header}>
          <div className={s.removeItemContainer}>
-            <div className={s.removeIcon} onClick={() => onItemRemove(productItem[PROP_AS_ID])} />
+            <div className={s.removeIcon} onClick={() => onItemRemove(productItem["Artikelnummer"])} />
          </div>
          <div className={s.imageContainer}>
             <Image path={productItem["productImage"]} />
