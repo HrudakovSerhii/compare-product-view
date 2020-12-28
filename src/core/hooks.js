@@ -6,7 +6,7 @@ import { PRODUCT_ALL_URL } from "../../app.config";
 
 import { sortByAlphabet } from "./utils";
 
-const EXCLUDE_FROM_COMPARE_PROP_NAMES = [
+const EXCLUDE_PROP_NAMES = [
    "salePrice",
    "manufacturerName",
    "grossPrice",
@@ -30,7 +30,7 @@ const EXCLUDE_FROM_COMPARE_PROP_NAMES = [
    @param {array} products Product list
  * @return {array} array of property names that are common for all provided products
  */
-export const getCommonPropNameList = (products) => {
+export const getCommonPropNames = (products) => {
    const props = {};
    const commonProps = [];
 
@@ -55,14 +55,14 @@ export const getCommonPropNameList = (products) => {
    @param {array} comparePropNames list of props names to compare
  * @return {array} list of property names where values on products has diff
  */
-export const getPropNamesWithValueDiff = (compareProducts, comparePropNames) => {
+export const getPropNamesWithValueDiff = (products, propNames) => {
    const propNamesWithValueDiff = [];
 
-   comparePropNames.forEach((propName) => {
+   propNames.forEach((propName) => {
       let hasDiff = false;
       let prevValue = "";
 
-      compareProducts.find((product) => {
+      products.find((product) => {
          if (!prevValue) prevValue = product[propName];
          else if (prevValue !== product[propName]) hasDiff = true;
          return hasDiff;
@@ -92,47 +92,56 @@ export const useProducts = () => {
       if (errors) {
          setErrors(errors);
       } else {
-         setProducts(data?.products);
+         const newProducts = data?.products;
 
+         const commonPropsList = getCommonPropNames(newProducts);
          const newCompareList = data?.products.reduce(
             (acc, current) => [...acc, { id: current["Artikelnummer"], name: current["name"], isActive: true }],
             []
          );
 
+         setProducts(newProducts);
          setCompareList(newCompareList);
+
+         const filteredPropsList = commonPropsList.filter((productProp) => !EXCLUDE_PROP_NAMES.includes(productProp));
+
+         updatePropList(newProducts, filteredPropsList);
       }
 
       setLoading(false);
    };
 
-   const removeProduct = (id) => {
-      setProducts((prevState) => prevState.filter((p) => p["Artikelnummer"] !== id));
-      setCompareList((prevState) => prevState.filter((p) => p.id !== id));
-   };
-
-   const updateCompareList = (id, isActive) => {
-      setCompareList((prevState) => prevState.map((p) => (p.id === id ? { ...p, isActive } : p)));
-   };
-
-   React.useEffect(() => {
-      fetchAllProducts();
-   }, []);
-
-   React.useEffect(() => {
-      const commonPropNamesList = getCommonPropNameList(products);
-
-      const filteredCompareList = commonPropNamesList.filter(
-         (productProp) => !EXCLUDE_FROM_COMPARE_PROP_NAMES.find((p) => p === productProp)
-      );
-
-      const diffProductsList = getPropNamesWithValueDiff(products, filteredCompareList);
+   const updatePropList = (products, propNames) => {
+      const diffProductsList = getPropNamesWithValueDiff(products, propNames);
 
       const sortedPropsList = sortByAlphabet(diffProductsList, "propName");
 
       sortedPropsList.sort((a) => (a["propName"] === "badges" ? -1 : 0));
 
       setPropsList(sortedPropsList);
-   }, [compareList.map((p) => p.isActive).toString()]);
+   };
+
+   const removeProduct = (id) => {
+      const newCompareList = compareList.filter((p) => p.id !== id);
+      const newProducts = products.filter((p) => p["Artikelnummer"] !== id);
+
+      setProducts(newProducts);
+      setCompareList(newCompareList);
+
+      updatePropList(products, propsList);
+   };
+
+   const updateCompareList = (id, isActive) => {
+      const newCompareList = compareList.map((p) => (p.id === id ? { ...p, isActive } : p));
+
+      setCompareList(newCompareList);
+
+      updatePropList(products, propsList);
+   };
+
+   React.useEffect(() => {
+      fetchAllProducts();
+   }, []);
 
    return {
       visibleProducts: products.filter((product) =>
