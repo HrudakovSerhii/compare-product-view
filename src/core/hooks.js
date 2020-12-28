@@ -68,9 +68,9 @@ export const useProducts = () => {
       setProductsToCompare((prevState) => prevState.filter((p) => p.id !== id));
    };
 
-   const updateProductsToCompare = (id, newState) => {
+   const updateProductsToCompare = (id, isActive) => {
       setProductsToCompare((prevState) =>
-         prevState.map((activeItem) => (activeItem.id === id ? { ...activeItem, isActive: newState } : activeItem))
+         prevState.map((activeItem) => (activeItem.id === id ? { ...activeItem, isActive } : activeItem))
       );
    };
 
