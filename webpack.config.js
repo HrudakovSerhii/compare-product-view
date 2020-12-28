@@ -13,7 +13,8 @@ module.exports = (env, argv) => {
       output: {
          path: DIST_DIR,
          publicPath: "/",
-         filename: devMode ? "bundle.js" : "[bundle].[contenthash].js"
+         chunkFilename: devMode ? "js/[name].js" : "js/[name].[contenthash].js",
+         filename: devMode ? "js/[name].js" : "js/[name].[contenthash].js"
       },
       module: {
          rules: [
@@ -88,12 +89,11 @@ module.exports = (env, argv) => {
       plugins: [
          new webpack.HotModuleReplacementPlugin(),
          new HtmlWebpackPlugin({
-            template: SRC_DIR + "/index.html",
-            filename: "./index.html"
+            filename: `${DIST_DIR}/index.html`,
+            template: `${SRC_DIR}/index.html`
          }),
          new MiniCssExtractPlugin({
-            filename: devMode ? "[name].css" : "[name].[hash].css",
-            chunkFilename: devMode ? "[id].css" : "[id].[hash].css"
+            filename: "styles/[name].[hash].css"
          })
       ],
       devServer: {
