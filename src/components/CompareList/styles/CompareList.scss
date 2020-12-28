@@ -3,7 +3,7 @@
 .compareList {
   display: flex;
   flex-direction: column;
-  min-width: calc(20vw - (var(--spacer-1) * 4));
+  height: 100%;
   padding-bottom: var(--spacer-4);
 
   .title {
@@ -21,7 +21,7 @@
       font-weight: bold;
     }
 
-    .title {
+    .itemTitle {
       padding-left: var(--baseline-1);
     }
   }

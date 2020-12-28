@@ -16,7 +16,7 @@ export const CompareList = ({ updateProductsToCompare, productsToCompare = [] })
                   onClick={() => updateProductsToCompare(id, !active)}
                >
                   <input readOnly checked={active} type="checkbox" />
-                  <Title title={name} />
+                  <Title title={name} style={s.itemTitle} />
                </div>
             ))}
          </>
