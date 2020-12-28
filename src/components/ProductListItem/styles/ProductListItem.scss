@@ -27,8 +27,8 @@
       .removeIcon {
         background-image: url("../../../assets/images/remove_icon.jpeg");
         background-size: cover;
-        width: $icon-size;
-        height: $icon-size;
+        width: $icon-size / 2;
+        height: $icon-size / 2;
         cursor: pointer;
       }
     }
