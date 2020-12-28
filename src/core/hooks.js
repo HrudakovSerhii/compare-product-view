@@ -53,7 +53,7 @@ export const useProducts = () => {
          setProducts(data?.products);
 
          const _productsToCompare = data?.products.reduce(
-            (acc, current) => [...acc, { id: current[PROP_AS_ID], name: current["name"], active: true }],
+            (acc, current) => [...acc, { id: current[PROP_AS_ID], name: current["name"], isActive: true }],
             []
          );
 
@@ -70,7 +70,7 @@ export const useProducts = () => {
 
    const updateProductsToCompare = (id, newState) => {
       setProductsToCompare((prevState) =>
-         prevState.map((activeItem) => (activeItem.id === id ? { ...activeItem, active: newState } : activeItem))
+         prevState.map((activeItem) => (activeItem.id === id ? { ...activeItem, isActive: newState } : activeItem))
       );
    };
 

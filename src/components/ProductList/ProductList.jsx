@@ -10,7 +10,7 @@ export const ProductList = ({ products, propsList, productsToCompare, removeFrom
    return (
       <div className={s.productList}>
          {products.map((product) => {
-            const isActive = !!productsToCompare.find((p) => p.id === product[PROP_AS_ID] && p.active);
+            const isActive = !!productsToCompare.find((p) => p.id === product[PROP_AS_ID] && p.isActive);
 
             return (
                <ProductListItem

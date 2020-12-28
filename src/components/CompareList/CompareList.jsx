@@ -9,13 +9,13 @@ export const CompareList = ({ updateProductsToCompare, productsToCompare = [] })
       <div className={s.compareList}>
          <Title title="Je Selectie" style={s.title} />
          <>
-            {productsToCompare.map(({ id, name, active }, i) => (
+            {productsToCompare.map(({ id, name, isActive }, i) => (
                <div
                   key={name + i}
-                  className={`${s.itemContainer} ${active ? s.active : ""}`}
-                  onClick={() => updateProductsToCompare(id, !active)}
+                  className={`${s.itemContainer} ${isActive ? s.active : ""}`}
+                  onClick={() => updateProductsToCompare(id, !isActive)}
                >
-                  <input readOnly checked={active} type="checkbox" />
+                  <input readOnly checked={isActive} type="checkbox" />
                   <Title title={name} style={s.itemTitle} />
                </div>
             ))}
