@@ -31,7 +31,7 @@ export const filterPropsToCompare = (productsPropList, excludePropNames) =>
    productsPropList.filter((productProp) => !excludePropNames.find((p) => p === productProp));
 
 /*
-   Function return list of property names that exist in all products and where values related to prop.name at all
+   Function return list of property names where values related to prop.name at all
    products not equal
    @param {array} compareProducts list of products to compare
    @param {array} comparePropNames list of props names to compare
@@ -56,8 +56,8 @@ export const getPropNamesWithValueDiff = (compareProducts, comparePropNames) => 
    return propNamesWithValueDiff;
 };
 
+/*
+   Sort prop.names list by alphabet.
+ */
 export const sortPropsListByAlphabet = (propsList) =>
-   [...propsList].sort((a, b) => {
-      if (a["propName"] === "badges") return -1;
-      else return a["propName"].localeCompare(b["propName"]);
-   });
+   [...propsList].sort((a, b) => a["propName"].localeCompare(b["propName"]));

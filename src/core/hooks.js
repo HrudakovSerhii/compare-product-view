@@ -85,6 +85,7 @@ export const useProducts = () => {
       const valueDiffPropsList = getPropNamesWithValueDiff(products, comparePropsList);
 
       const sortedPropsList = sortPropsListByAlphabet(valueDiffPropsList);
+      sortedPropsList.sort((a) => (a["propName"] === "badges" ? -1 : 0));
 
       setPropsList(sortedPropsList);
    }, [products.map((p) => p?.[PROP_AS_ID]).toString()]);
