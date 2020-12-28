@@ -62,10 +62,9 @@ export const getPropNamesWithValueDiff = (products, propNames) => {
       let hasDiff = false;
       let prevValue = "";
 
-      products.find((product) => {
+      products.forEach((product) => {
          if (!prevValue) prevValue = product[propName];
-         else if (prevValue !== product[propName]) hasDiff = true;
-         return hasDiff;
+         else hasDiff = prevValue !== product[propName];
       });
 
       propNamesWithValueDiff.push({ propName, hasDiff });
