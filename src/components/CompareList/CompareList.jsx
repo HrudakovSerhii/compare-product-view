@@ -15,7 +15,7 @@ export const CompareList = ({ updateProductsToCompare, productsToCompare = [] })
                <div
                   key={name + i}
                   className={`${s.itemContainer} ${isActive ? s.active : ""}`}
-                  onClick={() => updateProductsToCompare(id, activeCounter > 2 ? !isActive : true)}
+                  onClick={() => (activeCounter > 2 || !isActive) && updateProductsToCompare(id, !isActive)}
                >
                   <input disabled={activeCounter <= 2} readOnly checked={isActive} type="checkbox" />
                   <Title title={name} style={s.itemTitle} />
