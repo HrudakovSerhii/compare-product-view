@@ -7,6 +7,7 @@
   justify-content: flex-end;
   width: 100%;
   min-width: $product-item-min-width;
+  max-width: $product-item-max-width;
 
   .header {
     border-bottom: $gray-light solid 1px;
