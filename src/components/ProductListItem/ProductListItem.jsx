@@ -12,7 +12,8 @@ export const ProductListItem = ({ productItem, propsList, isActive, onItemRemove
    <div className={`${s.productItem} ${!isActive ? s.disabled : ""}`}>
       <div className={s.header}>
          <div className={s.removeItemContainer}>
-            <input type="checkbox" onChange={() => onItemRemove(productItem[PROP_AS_ID])} title={"Remove"} />
+            <div className={s.removeIcon} onClick={() => onItemRemove(productItem[PROP_AS_ID])} />
+            {/*<input type="checkbox" onChange={() => onItemRemove(productItem[PROP_AS_ID])} title={"Remove"} />*/}
          </div>
          <div className={s.imageContainer}>
             <Image path={productItem["productImage"]} />

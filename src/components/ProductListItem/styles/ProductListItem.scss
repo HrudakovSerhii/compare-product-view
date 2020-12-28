@@ -20,8 +20,17 @@
     height: 100%;
 
     .removeItemContainer {
-      text-align: right;
+      display: flex;
+      justify-content: flex-end;
       padding: var(--spacer-2);
+
+      .removeIcon {
+        background-image: url("../../../assets/images/remove_icon.jpeg");
+        background-size: cover;
+        width: $icon-size;
+        height: $icon-size;
+        cursor: pointer;
+      }
     }
 
     .imageContainer {
